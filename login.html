@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        body::before {
+            content: "";
+            background-image: url('pic3/2525.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(5px);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 400px;
+            padding: 20px;
+            border: transparent;
+            border-radius: 5px;
+            background-color: transparent;
+        }
+
+        input[type="password"] {
+            width: calc(100% - 32px);
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            display: inline-block;
+        }
+
+        .show-password {
+            display: inline-block;
+            width: 32px;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            cursor: pointer;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #9b5403;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e07f00;
+        }
+
+        .message {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <input type="password" id="password" placeholder="Enter Password" required>
+            <div class="show-password" onclick="togglePasswordVisibility()">
+                <span id="showPasswordIcon">👁️</span>
+            </div>
+            <button type="button" onclick="validatePassword()">Login</button>
+            <p class="message" id="errorMessage"></p>
+        </form>
+    </div>
+    <script>
+        function validatePassword() {
+            var password = document.getElementById('password').value;
+            if (password === 'kimuybines') {
+                window.location.href = 'index.html'; // Redirect to index.html
+            } else {
+                document.getElementById('errorMessage').innerText = 'Incorrect password. Please try again.';
+            }
+        }
+
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById('password');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+            } else {
+                passwordInput.type = 'password';
+            }
+        }
+
+        // Prevent form submission on Enter key press
+        document.getElementById('loginForm').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                validatePassword();
+            }
+        });
+
+        // Warn before leaving the page
+        window.addEventListener('beforeunload', function (e) {
+            e.preventDefault();
+            e.returnValue = '';
+        });
+
+        // Prevent using the forward and backward buttons
+        history.pushState(null, null, location.href);
+        window.addEventListener('popstate', function () {
+            history.pushState(null, null, location.href);
+        });
+    </script>
+</body>
+
+</html>

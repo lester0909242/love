@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Letter with Blurred Background</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('pic3/0+9.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .love-letter {
+            background-color: rgba(214, 152, 18, 0.555);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            text-align: left;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+
+        header {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            text-align: center;
+            color: #fff;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .heart {
+            color: red;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #9b5403;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e07f00;
+        }
+
+        /* Responsive layout */
+        @media (max-width: 768px) {
+            .love-letter {
+                max-width: 90%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .love-letter {
+                max-width: 100%;
+            }
+        }
+
+        /* Audio player styles */
+        .audio-player {
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            display: flex;
+            align-items: center;
+            color: #fff;
+        }
+
+        .audio-player audio {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <audio id="bgMusic" autoplay loop>
+        <source src="pic3/PALAGI - TJ Monterde  OFFICIAL LYRIC VIDEO.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <header>
+        <h1>My Love Letter to You</h1>
+    </header>
+    <div class="love-letter">
+        <p>My Dearest Kim Uybines,</p>
+        <p>Good day, my love! How was your day? 
+        WA RAJUD KOY LINGAW HAHAHAHAH</p>
+        <p>But before eh play sang music naa sa ubos para mas chuy AHAHAHAHHAHAHAHA</p>
+        <p></p>So okayyy!! thank you for everything because you're the girl who turned my world around, the one who captured my heart and soul. With you, I've found a love so deep, so profound, it's like a divine blessing from above. You're not just my partner; you're my soulmate, my companion in this journey called life. Together, we've found solace and strength in our devotion to God, and through Him, our love has flourished and grown. You're the reason I wake up with a grateful heart, the reason I strive to be a better man. With you by my side, I know I can conquer any challenge, face any storm. You're my love, my life, my everything, and I thank God every day for bringing you into my life.</p>
+        <p>Even though we keep our love private because of our parents, I eagerly await the day when we can bravely stand before them, hand in hand, and declare our love openly. My love for you is unwavering and true, and I cannot wait for the day when we can share it with the world. I love you more than words can express, my darling.</p>
+        <p>AYAW SIG GALAW ARAAA KAY GIPANINGUT KO SIG HUNAHUNA OG ENGLISH HAHAHAHAHAHA!!!</p>
+        <p>Forever yours,</p>
+        <p>Your Love</p>
+    </div>
+    <footer>
+        <p1>I love you more than words can say. <span class="heart">&hearts;</span></p1>
+        <button onclick="logout()">Log Out</button>
+    </footer>
+    <div class="audio-player">
+        <audio controls>
+            <source src="pic3/plaagi.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    <script>
+        function logout() {
+            // Redirect to the login page
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+
+</html>
